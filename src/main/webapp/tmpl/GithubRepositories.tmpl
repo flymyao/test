@@ -1,0 +1,64 @@
+<script id="tmpl-GithubRepositories" type="text/html">
+  <div class="container githubRepositories"> 
+		<table class="table table-striped">
+			{{#equal showCreate "none"}}
+			
+			{{else}}
+			<tr>
+				<td colspan="2" class="form-inline">
+					<input type="text" name="newRepository" class="input-block-level repositoryName" placeholder="type the repository name"/>
+					<input type="text" name="description" class="input-block-level description" placeholder="description for repository"/> 
+					<button class="btn btn-primary createRepository">Create repository</button>
+					<img class="githubloading hide create" src="https://a248.e.akamai.net/assets.github.com/images/spinners/octocat-spinner-32.gif"/>
+				</td>
+			</tr>
+			{{/equal}}
+		  {{#each repositories}}
+			<tr>
+				<td class="span12" data-repository-id="{{id}}" data-login="{{owner.login}}" data-repository-name="{{name}}" data-repository-description="{{description}}">
+					<span class="title">
+						{{#if private}}
+						<span class="alert alert-waring padding8">Private</span>
+						{{else}}
+						<span class="alert alert-info padding8">Public</span>
+						{{/if}}
+						<span class="reponame" data-repo="{{name}}">
+							Name:{{name}}
+						</span>
+						<span>
+							<i class="icon-edit iconHover"></i>
+						</span>
+						<span class="commits">Commits</span>
+						<span class="events">Events</span>
+						<span class="createdownload">Downloads</span>
+						<span class="forks">Forks</span>
+					</span>
+				  <div>
+				  {{#equal ../showCreate "none"}}
+				  	<div><label class="detailsTitle">watchers</label><span class="detailsContent">{{watchers}}</span></div>
+				  	<div><label class="detailsTitle">language</label><span class="detailsContent">{{language}}</span></div>
+				  	<div><label class="detailsTitle">Pushed Date</label><span class="detailsContent">{{date pushedAt}}</span></div>
+				  	<div><label class="detailsTitle">Create Date</label><span class="detailsContent">{{date createdAt}}</span></div>
+				  	<div><label class="detailsTitle">description</label><span class="detailsContent">{{description}}</span></div>
+				  {{else}}
+				  	<div><label class="detailsTitle">url</label><span class="detailsContent">{{url}}</span></div>
+				  	<div><label class="detailsTitle">Html url</label><span class="detailsContent">{{htmlUrl}}</span></div>
+				  	<div><label class="detailsTitle">SVN url</label><span class="detailsContent">{{svnUrl}}</span></div>
+				  	<div><label class="detailsTitle">Git url</label><span class="detailsContent">{{gitUrl}}</span></div>
+				  	<div><label class="detailsTitle">Mirror Url</label><span class="detailsContent">{{mirrorUrl}}</span></div>
+				  	<div><label class="detailsTitle">watchers</label><span class="detailsContent">{{watchers}}</span></div>
+				  	<div><label class="detailsTitle">language</label><span class="detailsContent">{{language}}</span></div>
+				  	<div><label class="detailsTitle">Pushed Date</label><span class="detailsContent">{{date pushedAt}}</span></div>
+				  	<div><label class="detailsTitle">Create Date</label><span class="detailsContent">{{date createdAt}}</span></div>
+				  	<div><label class="detailsTitle">Update Date</label><span class="detailsContent">{{date updatedAt}}</span></div>
+				  	<div><label class="detailsTitle">Has wiki</label><span class="detailsContent">{{hasWiki}}</span></div>
+				  	<div><label class="detailsTitle">open issues</label><span class="detailsContent">{{openIssues}}</span></div>
+				  	<div><label class="detailsTitle">description</label><span class="detailsContent">{{description}}</span></div>
+				  {{/equal}}
+				  </div>
+				</td>
+			</tr>
+			{{/each}}
+		</table>
+	</div>
+</script>

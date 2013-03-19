@@ -1,0 +1,67 @@
+<script id="tmpl-DropboxFiles" type="text/html">
+	<div class="container dropfiles">
+		{{#if metadata.search}}
+		<span class="searchtitle">Search-{{metadata.contents.length}} results</span>
+		<div class="input-append commonoperation" data-path="{{metadata.path}}">
+	 		<input type="text" name="search" class="input-block-level searchbox" placeholder="Search dropbox"/>
+	 		<button type="button" class="btn search">Search</button>
+		</div>
+		{{else}}
+		<div class="sprite sprite_web s_web_dropbox_32 space pointer"></div>
+		<span class="filepath">{{filepath metadata.path}}</span>
+		<div class="input-append commonoperation" data-path="{{metadata.path}}">
+			<img alt="Upload" src="https://www.dropbox.com/static/images/icons/icon_spacer.gif"
+					 class="sprite sprite_web s_web_upload_16 upload">
+			<img alt="New folder" class="sprite sprite_web s_web_folder_add "
+						 src="https://www.dropbox.com/static/images/icons/icon_spacer.gif"/>
+			<img alt="Show deleted files" src="https://www.dropbox.com/static/images/icons/icon_spacer.gif"
+			 class="sprite sprite_web {{#if showDeleted}}s_web_hide-deleted{{else}}s_web_show-deleted{{/if}}">
+	 		<input type="text" name="search" class="input-block-level searchbox" placeholder="Search dropbox"/>
+	 		<button type="button" class="btn search">Search</button>
+		</div>
+		{{/if}}
+		<table class="table table-striped">
+			<tr>
+				<th>Name</th>
+				<th>Size</th>
+				<th>Modified</th>
+				<th>Operation</th>
+			</tr>
+			
+			{{#each metadata.contents}}
+			<tr data-path="{{path}}" data-dir="{{is_dir}}" data-rev="{{rev}}">
+				<td>
+					<div>
+						<img class="sprite_web s_web_{{icon}}_32 pointer space" data-thumb="{{thumb_exists}}" src="https://www.dropbox.com/static/images/icons/icon_spacer.gif"/>
+						<span class="filename pointer">{{filename path}}</span>
+					</div>
+				</td>
+				<td>{{filesize size is_deleted}}</td>
+				<td>{{localDate modified}}</td>
+				<td>
+					<span>
+						<a href="dropbox/getFile{{path}}">download</a>
+						{{#if is_deleted}}
+						{{else}}
+						<a href="javascript:void(0)" class="delete">delete</a>
+						{{/if}}
+						<a href="javascript:void(0)" class="share">Share</a>
+						<a href="javascript:void(0)" class="copy">copy</a>
+						<a href="javascript:void(0)" class="move">move</a>
+						{{#if is_deleted}}
+						<a href="javascript:void(0)" class="restore">restore</a>
+						{{/if}}
+					</span>
+				</td>
+			</tr>
+			{{/each}}
+		</table>
+		
+		{{#isEmpty metadata.contents}}
+		<div class="emptyfolder">
+			<img src="https://dt8kf6553cww8.cloudfront.net/static/images/add_files_300-vflQxZMgf.jpg" alt="">
+			<h3>This Folder is empty.</h3>
+		</div>
+		{{/isEmpty}}
+	</div>
+</script>
