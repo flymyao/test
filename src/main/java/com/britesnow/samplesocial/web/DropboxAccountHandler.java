@@ -9,11 +9,19 @@ import com.google.inject.Singleton;
 
 @Singleton
 public class DropboxAccountHandler {
+	/**
+	 * sssssss
+	 */
 	@Inject
 	private DropboxAccountService dropboxAccountService;
 	
 	@WebGet("/dropbox/getAccountInfo")
 	public WebResponse getAccountInfo(@WebUser User user){
+		return WebResponse.success(dropboxAccountService.getAccountInfo(user.getId()));
+	}
+	
+	@WebGet("/dropbox/getAccountInfo") 
+	public WebResponse getAccountInfo1(@WebUser User user){
 		return WebResponse.success(dropboxAccountService.getAccountInfo(user.getId()));
 	}
 	
