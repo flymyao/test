@@ -31,6 +31,7 @@ public class ContactDao extends BaseHibernateDao<Contact> {
 
     public void deleteContact(String id) {
         Contact c = get(new Long(id));
+        //local add this message
         delete(c);
     }
 }
