@@ -19,6 +19,7 @@ public class ContactDao extends BaseHibernateDao<Contact> {
 
     public List getContactsList(User user, String query) {
     	//0407分支添加的，呵呵
+    	//0407_2分支添加的，呵呵
         String hql = "from Contact where 1=1 ";
         List ls = null;
         if (StringUtils.isNotBlank(query)) {
@@ -28,6 +29,7 @@ public class ContactDao extends BaseHibernateDao<Contact> {
             ls = search(hql);
         }
         return ls;
+      //0407_2分支添加的，呵呵
     }
 
     public void deleteContact(String id) {
