@@ -1,0 +1,27 @@
+From 2dfd030dea3f822a154591196d7f4cf7dea8a27a Mon Sep 17 00:00:00 2001
+From: flymyao <flymyao@gmail.com>
+Date: Sun, 7 Apr 2013 11:47:23 +0800
+Subject: [PATCH] =?UTF-8?q?0407=5F1=E4=BF=AE=E6=94=B9?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ src/main/java/com/britesnow/samplesocial/dao/ContactDao.java | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/main/java/com/britesnow/samplesocial/dao/ContactDao.java b/src/main/java/com/britesnow/samplesocial/dao/ContactDao.java
+index 1446360..0fdf1a6 100644
+--- a/src/main/java/com/britesnow/samplesocial/dao/ContactDao.java
++++ b/src/main/java/com/britesnow/samplesocial/dao/ContactDao.java
+@@ -19,6 +19,7 @@ public class ContactDao extends BaseHibernateDao<Contact> {
+ 
+     public List getContactsList(User user, String query) {
+     	//0407分支添加的，呵呵
++    	//0407——1分支添加的，呵呵
+         String hql = "from Contact where 1=1 ";
+         List ls = null;
+         if (StringUtils.isNotBlank(query)) {
+-- 
+1.8.0.msysgit.0
+
