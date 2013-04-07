@@ -3,26 +3,27 @@ package com.test;
 public class Child {
 	private static Child c = new Child();
 	 	{
-	        System.out.println("×ÓÀà·Ç¾²Ì¬³õÊ¼»¯¿é");
+	        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½Ì¬ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½");
 	    }
 	    static
 	    {
-	        System.out.println("×ÓÀà¾²Ì¬³õÊ¼»¯¿é");
+	        System.out.println("ï¿½ï¿½ï¿½à¾²Ì¬ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½");
 	    }
 	    public Child()
 	    {
-	        System.out.println("×ÓÀàµÄ¹¹Ôì·½·¨");
+	        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ä¹ï¿½ï¿½ì·½ï¿½ï¿½");
 	    }
 	    public static int childStaticMethod()
 	    {
-	        System.out.println("×ÓÀàµÄ¾²Ì¬·½·¨");
+	        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ä¾ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½");
 	        return 1000;
+	        //æœåŠ¡å™¨æ·»åŠ çš„
 	    }
 	    @Override
 	    protected void finalize() throws Throwable
 	    {
 	        // TODO Auto-generated method stub
 	        super.finalize();
-	        System.out.println("Ïú»Ù×ÓÀà");
+	        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 	    }
 }
