@@ -3,7 +3,7 @@ package com.britesnow.samplesocial.dao;
 import com.britesnow.samplesocial.entity.BaseEntity;
 import com.britesnow.snow.web.db.hibernate.HibernateDaoHelper;
 import com.google.inject.Inject;
-import com.googlecode.gentyref.GenericTypeReflector;
+import    com.googlecode.gentyref.GenericTypeReflector;
 import org.apache.commons.lang.StringUtils;
 
 import java.lang.reflect.Field;
